@@ -1,3 +1,17 @@
+// Add this at the very top of your file
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('Bigman is active!');
+});
+
+app.listen(port, () => {
+  console.log(`Web server listening on port ${port}`);
+});
+
+// ... your existing Discord bot code starts below here ...
 console.log("--- BOT IS STARTING UP ---");
 require('dotenv').config();
 const { Client, GatewayIntentBits, Events } = require('discord.js');
